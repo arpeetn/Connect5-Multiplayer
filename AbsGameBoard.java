@@ -41,7 +41,8 @@ public abstract class AbsGameBoard implements IGameBoard {
     @Override
     public String toString() {
         String sep = "|";
-
+        
+        //sets the top of the board with numbering for columns
         for(int i = 0; i < getNumColumns(); i++) {
             if(i < 10) {
                 sep = sep.concat(" ");
@@ -50,7 +51,9 @@ public abstract class AbsGameBoard implements IGameBoard {
             sep = sep.concat("|");
         }
         sep =sep.concat("\n");
-
+        
+        //for loop to create strings of board
+        //user playing game selects number of rows and columns
         for(int i = (getNumRows() - 1); i >= 0; i--) {
             for(int k = 0; k < getNumColumns(); k++) {
                 BoardPosition pos = new BoardPosition(i, k);
